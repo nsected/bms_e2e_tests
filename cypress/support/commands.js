@@ -10,7 +10,25 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
+Cypress.Commands.add("login", () => {
+    cy.visit('/');
+    cy
+        .readFile("tmp/cookies.json")
+        .then((cookies) => {
+            cookies.forEach(function (cookie) {
+                setCookie(cookie.name, cookie.value, {
+                    domain: cookie.domain,
+                    path: cookie.path,
+                    secure: cookie.secure,
+                    expiry: cookie.expiry
+                })
+            });
+            function setCookie(name, value, options) {
+                cy.setCookie(name, value)
+            }
+        });
+
+});
 //
 //
 // -- This is a child command --

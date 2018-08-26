@@ -103,7 +103,7 @@ class Vars {
     }
 }
 
-const root = path.join(process.env.OLDPWD + '/tmp/vars.json');
+const root = path.join(process.env.PWD + '/tmp/vars.json');
 const vars = new Vars();
 
 fs.writeFile(root, JSON.stringify(vars, null, 4), (err) => {

@@ -14,4 +14,15 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+    config.env = require(process.env.PWD + '/tmp/vars.json');
+    config.env.cookies = JSON.stringify(require(process.env.PWD + '/tmp/cookies.json'));
+    console.log(config.env); // see what all is in here!
+  //
+    // modify config values
+
+    // modify env var value
+
+
+    // return config
+    return config
 }

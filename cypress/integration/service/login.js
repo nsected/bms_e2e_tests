@@ -1,8 +1,12 @@
 context('login', () => {
 it('login', () => {
     cy.visit('/');
-    cy.get('[name="username"]').type('ttestpublisher@gmail.com').should('have.value', 'ttestpublisher@gmail.com');
-    cy.get('[name="password"]').type('TestTestTest111').should('have.value', 'TestTestTest111');
+    cy.get('[name="username"]')
+        .type(Cypress.env('email'))
+        .should('have.value', Cypress.env('email'));
+    cy.get('[name="password"]')
+        .type(Cypress.env('password'))
+        .should('have.value', Cypress.env('password'));
     cy.get('[type="submit"]').click();
     cy.get('.ui-navigation__user').click();
     cy.getCookies()
