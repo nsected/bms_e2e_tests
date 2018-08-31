@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"sh test.sh"
+    "test":"npx cypress open",
+    "open":"node_modules/.bin/cypress open",
+    "install":"npm install"
   },
   "author": "",
   "license": "ISC",

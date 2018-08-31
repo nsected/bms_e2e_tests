@@ -8,7 +8,6 @@ context('VC', function () {
     });
 
     it('set currency',  function () {
-        cy.pause();
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-currency/packages`);
         cy.get('.xsui-icon-more').click();
         cy.get('[data-id="virtual_currency.packages.delete"]').click();

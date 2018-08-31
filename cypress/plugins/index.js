@@ -11,11 +11,19 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
+
+
+const path = require('path');
+if (!process.env.PWD) {
+    process.env.PWD = process.cwd();
+}
+
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-    config.env = require(process.env.PWD + '/tmp/vars.json');
-    config.env.cookies = JSON.stringify(require(process.env.PWD + '/tmp/cookies.json'));
+    console.log(process.env.PWD);
+    config.env = require(path.join(process.env.PWD, '/tmp/vars.json'));
+    config.env.cookies = JSON.stringify(require(path.join(process.env.PWD, '/tmp/cookies.json')));
     console.log(config.env); // see what all is in here!
   //
     // modify config values
