@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"npx cypress open",
+    "test":"node cypress/helpers/cypress-retries.js",
     "open":"node_modules/.bin/cypress open",
     "install":"npm install"
   },

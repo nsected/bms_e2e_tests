@@ -1,7 +1,8 @@
 {
   "projectId": "knc5fc",
-  "defaultCommandTimeout": 10000,
+  "defaultCommandTimeout": 30000,
   "baseUrl": "https://publisher.xsolla.com",
   "viewportHeight": 900,
-  "viewportWidth": 1220
+  "viewportWidth": 1220,
+  "networkCommandRetry": 3
 }
