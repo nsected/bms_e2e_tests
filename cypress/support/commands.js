@@ -281,10 +281,74 @@ Cypress.Commands.add("createViFolder", (_projectId) => {
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/virtual_items/groups`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
-            body: {"name": {"en": "1"}, "description": {"en": "1"}, "enabled": true, "code": "1", "parent_id": null}
+            body: {"name": {"en": "a_new_folder"}, "description": {"en": "1"}, "enabled": true, "code": "1", "parent_id": null}
         }).its('body.group_id')
     })
 });
+
+Cypress.Commands.add("newProjectWebhookUrlReady", () => {
+    return cy.request({
+        url: `https://api.xsolla.com/merchant/current/merchants/${Cypress.env('merchant')}/projects`,
+        method: 'POST',
+        headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
+        body: {
+            "xsolla_tips_enabled": null,
+            "id": 34954,
+            "descriptor": "2018-09-01T1",
+            "name": {"en": "2018-09-02T19:04:58.486Z"},
+            "url": "https://xsolla.slack.com/messages/D9GP784TE/details/#",
+            "keywords": "",
+            "description": "",
+            "img": null,
+            "payment_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php",
+            "key": "GEtLqMpr4DdAyB3s",
+            "is_cancel_implemented": true,
+            "enabled": false,
+            "return_url": null,
+            "is_send_email": false,
+            "user_billing_enabled": false,
+            "show_user_in_paystation": false,
+            "send_email_for_user_billing_purchase": false,
+            "is_sandbox_available": 1,
+            "locale_list": ["en"],
+            "users_count": 0,
+            "cardRecurring": true,
+            "components": {
+                "virtual_currency": {
+                    "enabled": true,
+                    "status": "configuring",
+                    "live": false,
+                    "custom_name": []
+                },
+                "items": {"enabled": true, "status": "testing", "live": false, "custom_name": []},
+                "simple_checkout": {"enabled": true, "status": "testing", "live": false, "custom_name": []},
+                "subscriptions": {"enabled": true, "status": "configuring", "live": false, "custom_name": []},
+                "coupons": {"enabled": true, "status": "ready", "live": false, "custom_name": []},
+                "game_delivery": {"enabled": true, "status": "configuring", "live": false, "custom_name": []}
+            },
+            "is_external_id_required": false,
+            "send_json_to_paystation": false,
+            "ipn_enabled": true,
+            "user_public_id_enabled": false,
+            "offerwall_enabled": false,
+            "autoredirect_from_status_page": "none",
+            "autoredirect_from_status_page_in_seconds": 0,
+            "status_page_show_return_to_game_link": "done",
+            "status_page_return_to_game_link_name": null,
+            "xsolla_tips_settings": [],
+            "products": {
+                "pay_station": {"status": "disconnected"},
+                "login": {"status": "disconnected"},
+                "launcher": {"status": "disconnected"},
+                "store": {"status": "disconnected"},
+                "site_builder": {"status": "disconnected"},
+                "partner_network": {"status": "disconnected"}
+            },
+            "payments_available": false
+        }
+    }).its('body.id')
+});
+
 //
 //
 // -- This is a child command --
