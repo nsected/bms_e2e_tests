@@ -1,4 +1,4 @@
-context('VC', function () {
+context('game keys', function () {
     before(function() {
         cy.login();
         cy.newProject().as('projectId');
