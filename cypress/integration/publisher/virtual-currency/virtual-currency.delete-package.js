@@ -4,7 +4,7 @@ context('VC', function () {
         cy.login();
         cy.newProject().as('projectId');
         cy.setCurrency('@projectId');
-        cy.createPackage('@projectId');
+        cy.createVcPackage('@projectId');
     });
 
     it('set currency',  function () {

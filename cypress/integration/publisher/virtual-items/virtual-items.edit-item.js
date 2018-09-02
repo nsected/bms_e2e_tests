@@ -1,16 +1,17 @@
+//todo: ассерт инпутов?
 context('virtual items', function () {
     before(function() {
         cy.login();
-        cy.newProjectVcReady().as('projectId');
-        cy.setCurrency('@projectId');
-        cy.createVcPackage('@projectId').as('vcpkgId');
+        cy.newProject().as('projectId');
+        cy.createViItem('@projectId')
     });
 
-    it('create item', function () {
-        cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items`);
-        cy.get('[data-id="vi.options.create"]').click();
-        cy.get('[data-id="vi.options.create.package"]').click();
-        //////BASIC SETTINGS/////
+    it('edit item', function () {
+        cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items/groups/ungrouped`);
+        cy.get('[data-id="item.options"]').click();
+        cy.get('[data-id="item.edit"]').click();
+
+//////BASIC SETTINGS/////
         cy.get('[data-id="sku"]')
             .clear()
             .type('testsku')
@@ -47,23 +48,20 @@ context('virtual items', function () {
             .type('test_tag')
             .should('have.value', 'test_tag');
         /////////PRICING///////
-        cy.get('[data-value="virtual_currency"]').click();
-        cy.get('[data-id="virtual_currency_price"]')
+        cy.get('[data-id="prices_array[0].value"]')
             .clear()
             .type('111')
             .should('have.value', '111');
         cy.get('[data-id="enabled"]').click();
         cy.get('[type="submit"]').click();
         /////asserting/////
-        cy.get('[data-id="vi.group.name"]').click();
         cy.get('[data-id="vi.item.name"]').should('have.text', `testvi`);
         cy.get('[data-id="vi.item.info"]').should('have.text', `testsku`);
-        cy.get('.virtual-items-row__id').should('have.text', `111 kitties`);//todo: пометить прайс
+        cy.get('.virtual-items-row__id').should('have.text', `$111.00`);//todo: пометить прайс
         ////сброс стейта/////
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items/groups/ungrouped`);
         cy.get('[data-id="vi.item.name"]').should('have.text', `testvi`);
         cy.get('[data-id="vi.item.info"]').should('have.text', `testsku`);
-        //cy.get('.virtual-items-row__id').should('have.text', `111 kitties`);
-        // todo: поправить баг с отображением названия валюты VC
+        cy.get('.virtual-items-row__id').should('have.text', `$111.00`);//todo: пометить прайс
     })
 });
