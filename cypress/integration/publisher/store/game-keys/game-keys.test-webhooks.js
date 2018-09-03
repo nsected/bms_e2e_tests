@@ -26,7 +26,7 @@ context('game keys', function () {
             .clear()
             .type('1')
             .should('have.value', '1');
-        cy.get('[data-id="digital_content_id"]').click();
+        cy.get('[data-id="currency"]').click();
         cy.get('[data-value="AFN"]').click();
         cy.get('[data-id="pin_code"]')
             .clear()
@@ -36,8 +36,7 @@ context('game keys', function () {
             .clear()
             .type('1')
             .should('have.value', '1');
-
-
-
+        cy.get('.webhooks-block__test-forms-container [type="submit"]').click();
+        cy.get('.submit-status--success');
     });
 });

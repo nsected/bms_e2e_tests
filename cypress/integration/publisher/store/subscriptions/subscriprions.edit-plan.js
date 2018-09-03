@@ -12,8 +12,8 @@ context('subscriptions', function () {
         cy.get('[data-id="subscriptions.table.plan.options.edit"]').click();
         cy.get('[data-id="name[en]"]')
             .clear()
-            .type('test plan name')
-            .should('have.value', 'test plan name');
+            .type('test plan name2')
+            .should('have.value', 'test plan name2');
         cy.get('[data-id="description[en]"]')
             .clear()
             .type('test Description')
@@ -36,11 +36,11 @@ context('subscriptions', function () {
             .clear()
             .type('14')
             .should('have.value', '14');
-
+        cy.get('button[type="submit"]').click();
 
 //assert
         cy.get('.table-rows__subscr__plan__name')
-            .should('have.text', 'test plan name');
+            .should('have.text', 'test plan name2');
         cy.get('.table-rows__subscr__bc span')
             .should('have.text', '12 months');
         cy.get('.table-rows__subscr__camount')
@@ -48,7 +48,7 @@ context('subscriptions', function () {
 
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
         cy.get('.table-rows__subscr__plan__name')
-            .should('have.text', 'test plan name');
+            .should('have.text', 'test plan name2');
         cy.get('.table-rows__subscr__bc span')
             .should('have.text', '12 months');
         cy.get('.table-rows__subscr__camount')

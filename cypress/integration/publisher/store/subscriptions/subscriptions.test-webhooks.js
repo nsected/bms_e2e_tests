@@ -1,19 +1,12 @@
 context('subscriptions', function () {
     before(function() {
         cy.login();
-        cy.newProject().as('projectId');
+        cy.newProjectWebhookUrlReady().as('projectId');
         cy.createSubscription('@projectId');
     });
 
     it('test webhooks',  function () {
-        //set webhook
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/edit/webhooks/subscriptions`);
-        cy.get('[data-id="payment_url"]')
-            .clear()
-            .type('https://secure.xsolla.com/api/calc/billing/sample.universal.php')
-            .should('have.value', 'https://secure.xsolla.com/api/calc/billing/sample.universal.php');
-        cy.get('.webhooks-block__form [type="submit"]:not([disabled])').click();
-
         //test webhook
         cy.get('[data-id="user_id"]')
             .clear()
