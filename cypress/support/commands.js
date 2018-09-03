@@ -349,6 +349,170 @@ Cypress.Commands.add("newProjectWebhookUrlReady", () => {
     }).its('body.id')
 });
 
+Cypress.Commands.add("createGameKeysBasic", (_projectId) => {
+    cy.get(_projectId).then((projectId) => {
+        return cy.request({
+            url: `https://api.xsolla.com/merchant/current/projects/${projectId}/game_delivery`,
+            method: 'POST',
+            headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
+            body: {
+                "name": {"en": "test Game title"},
+                "description": {"en": "test Description"},
+                "default_currency": "USD",
+                "system_requirements": "system_requirements",
+                "release_date": "2018-09-30T05:00:00+05:00",
+                "delivery": {
+                    "release_date_type": "quarter",
+                    "is_pre_order": true,
+                    "is_partner_side_processing": false,
+                    "delivery_method": {"default": ["key"], "exceptions": {}}
+                },
+                "files": [],
+                "obtain_code_from_api": false,
+                "obtain_code_from_db": true,
+                "sales_exist": false,
+                "drm": [{
+                    "id": 1,
+                    "name": "Steam",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/1.1472111837.svg",
+                    "platforms": [{"id": 2, "name": "Linux"}],
+                    "enabled": true
+                }, {
+                    "id": 2,
+                    "name": "Playstation",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/2.1535378400.svg",
+                    "platforms": [],
+                    "enabled": false
+                }, {
+                    "id": 3,
+                    "name": "XBox",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/3.1460367796.svg",
+                    "platforms": [],
+                    "enabled": false
+                }, {
+                    "id": 4,
+                    "name": "Uplay",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/4.1460367796.svg",
+                    "platforms": [],
+                    "enabled": false
+                }, {
+                    "id": 5,
+                    "name": "Origin",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/5.1460367796.svg",
+                    "platforms": [],
+                    "enabled": false
+                }, {
+                    "id": 6,
+                    "name": "DRM Free",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/6.1509084108.svg",
+                    "platforms": [{"id": 1, "name": "Windows"}],
+                    "enabled": true
+                }, {
+                    "id": 7,
+                    "name": "GOG",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/7.1492784697.svg",
+                    "platforms": [],
+                    "enabled": false
+                }],
+                "sku": "test"
+            }
+        }).its('body.id')
+    })
+});
+
+Cypress.Commands.add("createGameKeysFull", (_projectId) => {
+    cy.get(_projectId).then((projectId) => {
+        return cy.request({
+            url: `https://api.xsolla.com/merchant/current/projects/${projectId}/game_delivery`,
+            method: 'POST',
+            headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
+            body: {
+                "obtain_code_from_api": true,
+                "obtain_code_from_db": true,
+                "drm": [{
+                    "id": 1,
+                    "name": "Steam",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/1.1472111837.svg",
+                    "platforms": [{"id": 2, "name": "Linux"}],
+                    "prices": {"USD": 12345},
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": true
+                }, {
+                    "id": 2,
+                    "name": "Playstation",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/2.1535378400.svg",
+                    "platforms": [],
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": false
+                }, {
+                    "id": 3,
+                    "name": "XBox",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/3.1460367796.svg",
+                    "platforms": [],
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": false
+                }, {
+                    "id": 4,
+                    "name": "Uplay",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/4.1460367796.svg",
+                    "platforms": [],
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": false
+                }, {
+                    "id": 5,
+                    "name": "Origin",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/5.1460367796.svg",
+                    "platforms": [],
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": false
+                }, {
+                    "id": 6,
+                    "name": "DRM Free",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/6.1509084108.svg",
+                    "platforms": [{"id": 1, "name": "Windows"}],
+                    "prices": {"USD": 6789},
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": true
+                }, {
+                    "id": 7,
+                    "name": "GOG",
+                    "image": "//cdn.xsolla.net/misc/game_delivery/drms/set2/7.1492784697.svg",
+                    "platforms": [],
+                    "codes": {"total": 0, "active": 0, "used": 0},
+                    "enabled": false
+                }],
+                "default_currency": "USD",
+                "tips_enabled": true,
+                "id": null,
+                "sku": "test",
+                "name": {"en": "test Game title"},
+                "description": {"en": "test Description"},
+                "system_requirements": "system_requirements",
+                "image_url": "//cdn.xsolla.net/img/misc/merchant/default-item.png",
+                "long_description": null,
+                "locales_list": null,
+                "publisher": null,
+                "developer": null,
+                "video_link": null,
+                "genre": null,
+                "additional_info": null,
+                "forum_link": null,
+                "support_link": null,
+                "old_price": null,
+                "parent_id": null,
+                "release_date": "2018-09-30T05:00:00+05:00",
+                "delivery": {
+                    "release_date_type": "quarter",
+                    "delivery_method": {"default": ["key"], "exceptions": {}},
+                    "is_pre_order": true,
+                    "is_partner_side_processing": false
+                },
+                "files": [],
+                "sales_exist": false
+            }
+        }).its('body.id')
+    })
+});
 //
 //
 // -- This is a child command --

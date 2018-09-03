@@ -36,7 +36,7 @@ context('subscriptions', function () {
             .clear()
             .type('14')
             .should('have.value', '14');
-        cy.get('button[type="submit"]').click();
+
 
 //assert
         cy.get('.table-rows__subscr__plan__name')

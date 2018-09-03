@@ -2,8 +2,6 @@ context('game keys', function () {
     before(function() {
         cy.login();
         cy.newProject().as('projectId');
-        cy.setCurrency('@projectId');
-        cy.createVcPackage('@projectId');
     });
 
     it('create game keys package', function () {
