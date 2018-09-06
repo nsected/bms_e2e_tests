@@ -6,7 +6,7 @@ const path = require('path');
 class Vars {
     constructor(){
         this.merchant = "57265";
-        this.project = Vars.getNewProjectID();
+        // this.project = Vars.getNewProjectID();
         this.email= "ttestpublisher@gmail.com";
         this.password= "TestTestTest111";
 

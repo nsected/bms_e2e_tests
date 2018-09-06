@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"node cypress/helpers/cypress-retries.js",
+    "test":"sh test.sh",
     "open":"node_modules/.bin/cypress open",
-    "open2":"node_modules/.bin/cypress open",
     "install":"npm install"
   },
   "author": "",

@@ -1,15 +1,14 @@
 {
     "merchant": "57265",
-    "project": 34336,
     "email": "ttestpublisher@gmail.com",
     "password": "TestTestTest111",
-    "vc_name": "2018-08-29T09:14:35.035Z",
-    "vc_currency_price": "119870963118",
-    "vc_min_purchase_value": "14704",
-    "vc_max_purchase_value": "131186043981",
-    "vc_package_sku": "159340379397",
-    "vc_package_description": "191779799369",
-    "vc_package_price": "160315178506",
-    "vc_package_amount": "114704",
+    "vc_name": "2018-09-06T09:04:20.256Z",
+    "vc_currency_price": "180476898145",
+    "vc_min_purchase_value": "15175",
+    "vc_max_purchase_value": "128384101847",
+    "vc_package_sku": "185691803620",
+    "vc_package_description": "172478376616",
+    "vc_package_price": "112586233169",
+    "vc_package_amount": "115175",
     "webhook_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php"
 }
