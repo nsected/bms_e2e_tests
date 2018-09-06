@@ -1,0 +1,8 @@
+.idea
+*.iml
+tmp/*
+*.log
+npm-debug.log*
+node_modules/
+screenshots/*
+videos/*
