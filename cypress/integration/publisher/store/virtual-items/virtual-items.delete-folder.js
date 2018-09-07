@@ -1,4 +1,5 @@
 //todo: заполненая папка
+//todo: flacky? пофиксить
 context('virtual items', function () {
     before(function() {
         cy.login();

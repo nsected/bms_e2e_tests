@@ -1,7 +1,7 @@
 {
   "projectId": "knc5fc",
   "defaultCommandTimeout": 90000,
-  "baseUrl": "https://publisher-client.srv.local/",
+  "baseUrl": "https://v-20180907-release-01.publisher-client-stage.srv.local/",
   "viewportHeight": 1000,
   "viewportWidth": 1220,
   "networkCommandRetry": 3,
