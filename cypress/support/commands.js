@@ -9,6 +9,24 @@
 // ***********************************************
 //
 //
+
+function requestRetry(args) {
+    const is500Re = /^5/;
+    let retry = Cypress.config("networkCommandRetry");
+
+    function req() {
+        return cy.request(args)
+            .then((resp) => {
+                if (is500Re.test(resp.status) && retry > 0) {
+                    retry--;
+                    return req()
+                }
+                return resp
+            })
+    }
+    return req()
+}
+
 Cypress.Commands.overwrite('request', function (originalFn, args) {
     const is500Re = /^5/;
     let retry = Cypress.config("networkCommandRetry");
@@ -23,12 +41,20 @@ Cypress.Commands.overwrite('request', function (originalFn, args) {
                 return resp
             })
     }
-
     return req()
 });//todo: не работает в commands файле, исправить
 
+Cypress.Commands.add("test", (str) => {
+    cy.log(str);
+    cy.log(str);
+    cy.log(Cypress.spec);
+    cy.log(Cypress);
+    cy.log(this);
+    cy.log(cy)
+});
+
 Cypress.Commands.add("newProject", () => {
-    return cy.request({
+    return requestRetry({
         url: `https://api.xsolla.com/merchant/current/merchants/${Cypress.env('merchant')}/projects`,
         method: 'POST',
         headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -114,7 +140,7 @@ Cypress.Commands.add("login", function () {
 
 Cypress.Commands.add("testVc", (_vcpkgid) => {
     cy.get(_vcpkgid).then((vcpkgid) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/current/merchants/${Cypress.env('merchant')}/components/virtual_currency/test`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -130,7 +156,7 @@ Cypress.Commands.add("testVc", (_vcpkgid) => {
 
 Cypress.Commands.add("createSubscription", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/projects/${projectId}/subscriptions/plans`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -150,7 +176,7 @@ Cypress.Commands.add("createSubscription", (_projectId) => {
 
 Cypress.Commands.add("createViItem", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/virtual_items/items`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -178,7 +204,7 @@ Cypress.Commands.add("createViItem", (_projectId) => {
 
 Cypress.Commands.add("createVcPackage", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/virtual_currency/packages`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -199,7 +225,7 @@ Cypress.Commands.add("createVcPackage", (_projectId) => {
 
 Cypress.Commands.add("setCurrency", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        cy.request({
+        requestRetry({
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/virtual_currency`,
             method: 'PUT',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -221,7 +247,7 @@ Cypress.Commands.add("setCurrency", (_projectId) => {
 });
 
 Cypress.Commands.add("newProjectVcReady", () => {
-    return cy.request({
+    return requestRetry({
         url: `https://api.xsolla.com/merchant/current/merchants/${Cypress.env('merchant')}/projects`,
         method: 'POST',
         headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -280,7 +306,7 @@ Cypress.Commands.add("newProjectVcReady", () => {
 
 Cypress.Commands.add("createViFolder", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/virtual_items/groups`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -290,7 +316,7 @@ Cypress.Commands.add("createViFolder", (_projectId) => {
 });
 
 Cypress.Commands.add("newProjectWebhookUrlReady", () => {
-    return cy.request({
+    return requestRetry({
         url: `https://api.xsolla.com/merchant/current/merchants/${Cypress.env('merchant')}/projects`,
         method: 'POST',
         headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -354,7 +380,7 @@ Cypress.Commands.add("newProjectWebhookUrlReady", () => {
 
 Cypress.Commands.add("createGameKeysBasic", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/game_delivery`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
@@ -425,13 +451,13 @@ Cypress.Commands.add("createGameKeysBasic", (_projectId) => {
 
 Cypress.Commands.add("createGameKeysFull", (_projectId) => {
     cy.get(_projectId).then((projectId) => {
-        return cy.request({
+        return requestRetry({
             url: `https://api.xsolla.com/merchant/current/projects/${projectId}/game_delivery`,
             method: 'POST',
             headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
             body: {"name":{"en":"test Game title"},"description":{"en":"test Description"},"default_currency":"USD","system_requirements":"system_requirements","release_date":"2018-09-30T05:00:00+05:00","delivery":{"release_date_type":"quarter","is_pre_order":true,"is_partner_side_processing":false,"delivery_method":{"default":["key"],"exceptions":{}}},"files":[],"obtain_code_from_api":false,"obtain_code_from_db":true,"sales_exist":false,"drm":[{"id":1,"name":"Steam","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/1.1472111837.svg","platforms":[{"id":2,"name":"Linux"}],"enabled":true},{"id":2,"name":"Playstation","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/2.1535378400.svg","platforms":[],"enabled":false},{"id":3,"name":"XBox","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/3.1460367796.svg","platforms":[],"enabled":false},{"id":4,"name":"Uplay","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/4.1460367796.svg","platforms":[],"enabled":false},{"id":5,"name":"Origin","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/5.1460367796.svg","platforms":[],"enabled":false},{"id":6,"name":"DRM Free","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/6.1509084108.svg","platforms":[{"id":1,"name":"Windows"}],"enabled":true},{"id":7,"name":"GOG","image":"//cdn.xsolla.net/misc/game_delivery/drms/set2/7.1492784697.svg","platforms":[],"enabled":false}],"sku":"test"}
         }).then(response=>{
-             cy.request({
+            requestRetry({
                 url: `https://api.xsolla.com/merchant/current/projects/${projectId}/game_delivery/${response.body.id}`,
                 method: 'PUT',
                  headers: {"Authorization": "Basic NTcyNjU6a2tra2tra2tra2tr"},
