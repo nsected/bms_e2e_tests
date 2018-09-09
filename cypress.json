@@ -6,9 +6,7 @@
   "viewportWidth": 1220,
   "networkCommandRetry": 3,
   "trashAssetsBeforeRuns": false,
-  "reporter": "junit",
+  "reporter": "mocha-allure-reporter",
   "reporterOptions": {
-    "mochaFile": "results/report.xml",
-    "toConsole": true
 }
 }
