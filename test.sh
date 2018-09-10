@@ -8,3 +8,4 @@ npx cypress run  --spec 'cypress/integration/publisher/store/game-keys/**/*' --r
 #npx cypress run  --spec 'cypress/integration/publisher/store/virtual-currency/**/*'  --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa &
 #npx cypress run  --spec 'cypress/integration/publisher/store/virtual-items/**/*'  --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa &
 #wait
+
