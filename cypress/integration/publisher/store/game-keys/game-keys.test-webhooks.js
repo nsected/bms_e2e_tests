@@ -8,9 +8,9 @@ context('game keys', function () {
         cy.createGameKeysFull('@projectId').as('packageId')
     });
 
-    it('test webhooks', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/edit/webhooks/pay2play`);
-        cy.get('[data-id="digital_content_id"]').click();
+        cy.get('[data-id="digital_content_id//"]').click();
         cy.get('.xsui-dropdown__item').click();
         cy.get('[data-id="drm_id"]').click();
         cy.get('.xsui-dropdown__item[data-value="1"]').click();

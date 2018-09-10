@@ -15,12 +15,16 @@
 
 const path = require('path');
 if (!process.env.PWD) {
-    process.env.PWD = process.cwd();
+    process.env.PWD = process.cwd(); //фикс для винды
 }
 
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+    
+
+
+
     console.log(process.env.PWD);
     config.env = require(path.join(process.env.PWD, '/tmp/vars.json'));
     config.env.cookies = JSON.stringify(require(path.join(process.env.PWD, '/tmp/cookies.json')));

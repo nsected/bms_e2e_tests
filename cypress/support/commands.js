@@ -54,6 +54,7 @@ Cypress.Commands.add("test", (str) => {
 });
 
 Cypress.Commands.add("newProject", () => {
+    allure.createStep('sssss', ()=>{});
     return requestRetry({
         url: `https://api.xsolla.com/merchant/current/merchants/${Cypress.env('merchant')}/projects`,
         method: 'POST',

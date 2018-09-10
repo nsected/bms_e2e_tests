@@ -2,11 +2,23 @@
   "projectId": "knc5fc",
   "defaultCommandTimeout": 90000,
   "baseUrl": "https://publisher.xsolla.com/",
+  "env": {
+    "merchant": "57265",
+    "email": "ttestpublisher@gmail.com",
+    "password": "TestTestTest111",
+    "webhook_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php"
+  },
   "viewportHeight": 1000,
   "viewportWidth": 1220,
   "networkCommandRetry": 3,
   "trashAssetsBeforeRuns": false,
-  "reporter": "mocha-allure-reporter",
+  "screenshotsFolder": "report/screenshots",
+  "videosFolder": "report/videos",
+  "videoUploadOnPasses": false,
+  "reporter": "mochawesome",
   "reporterOptions": {
-}
+    "reportDir": "report",
+    "overwrite": false,
+    "saveJson": true
+  }
 }

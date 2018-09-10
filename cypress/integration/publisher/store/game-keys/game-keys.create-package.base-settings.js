@@ -4,9 +4,9 @@ context('game keys', function () {
         cy.newProject().as('projectId');
     });
 
-    it('create game keys package', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/pay2play`);
-        cy.get('[data-id="create-package"] button').click();
+        cy.get('[data-id="create-package"] button//').click();
         cy.get('[data-id="sku"]')
             .clear()
             .type('test')
