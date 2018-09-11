@@ -1,30 +1,21 @@
 [
     {
         "name": "session",
-        "value": "g3f96813ll54aecg2bikkt3g94",
+        "value": "dvisnrtdf6utdiigb7hihq6h90",
         "path": "/merchant",
         "domain": "api.xsolla.com",
         "secure": true,
         "httpOnly": true,
-        "expiry": 1536674668.665998
+        "expiry": 1536784373.675633
     },
     {
         "name": "_mm_uid_1004",
-        "value": "1536588262482466899",
+        "value": "1536697968308363451",
         "path": "/",
         "domain": ".publisher.xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1598796262
-    },
-    {
-        "name": "xsollauid",
-        "value": "36613695245123595",
-        "path": "/",
-        "domain": ".xsolla.com",
-        "secure": false,
-        "httpOnly": false,
-        "expiry": 1851853063.087048
+        "expiry": 1598905967
     },
     {
         "name": "_gat_UA-52807645-1",
@@ -33,7 +24,7 @@
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1536588323
+        "expiry": 1536698029
     },
     {
         "name": "__insp_wid",
@@ -42,16 +33,16 @@
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1568124266.663672
+        "expiry": 1568233972.695955
     },
     {
         "name": "__insp_slim",
-        "value": "1536588266663",
+        "value": "1536697972695",
         "path": "/",
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1568124266.663851
+        "expiry": 1568233972.696085
     },
     {
         "name": "__insp_nv",
@@ -60,7 +51,7 @@
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1568124266.664788
+        "expiry": 1568233972.697211
     },
     {
         "name": "__insp_targlpu",
@@ -69,7 +60,7 @@
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1568124266.666951
+        "expiry": 1568233972.698634
     },
     {
         "name": "__insp_targlpt",
@@ -78,7 +69,7 @@
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1568124266.667204
+        "expiry": 1568233972.69875
     },
     {
         "name": "__insp_norec_sess",
@@ -87,16 +78,16 @@
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1568124267.322011
+        "expiry": 1568233974.117126
     },
     {
         "name": "pa-v4-token",
-        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Mzc0NTIyNjcsImlzcyI6Imh0dHBzOlwvXC9sb2dpbi54c29sbGEuY29tIiwiaWF0IjoxNTM2NTg4MjY3LCJ1c2VybmFtZSI6InR0ZXN0cHVibGlzaGVyQGdtYWlsLmNvbSIsInJlZGlyZWN0X3VybCI6Imh0dHBzOlwvXC9wdWJsaXNoZXIueHNvbGxhLmNvbSIsInhzb2xsYV9sb2dpbl9hY2Nlc3Nfa2V5IjoiaTF5XzdMTjUxMWNRV2w0aEdDMVVaR1dzbHVxQTFrODVpQVpzd1EySE90VSIsInN1YiI6IjQyOGNiNWQwLTdhYTAtMTFlOC1hZGRlLTQyMDEwYThhMDAwMyIsInBhcnRuZXJfZGF0YSI6eyJhZG1pbiI6ZmFsc2UsIm1lcmNoYW50cyI6W3siaWQiOjU3MjY1LCJyb2xlIjoiUk9MRV9PV05FUiJ9XX0sInR5cGUiOiJwcm94eSIsInByb3ZpZGVyIjoieHNvbGxhIiwieHNvbGxhX2xvZ2luX3Byb2plY3RfaWQiOiI0MGRiMmVhNC01ZDQyLTExZTYtYTNmZi0wMDUwNTZhMGUwNGEifQ.lekicv07ck2vNngV3mgWfikXiDbkQECkeqfVDJFtWPY",
+        "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Mzc1NjE5NzMsImlzcyI6Imh0dHBzOlwvXC9sb2dpbi54c29sbGEuY29tIiwiaWF0IjoxNTM2Njk3OTczLCJ1c2VybmFtZSI6InR0ZXN0cHVibGlzaGVyQGdtYWlsLmNvbSIsInJlZGlyZWN0X3VybCI6Imh0dHBzOlwvXC9wdWJsaXNoZXIueHNvbGxhLmNvbSIsInhzb2xsYV9sb2dpbl9hY2Nlc3Nfa2V5IjoiaTF5XzdMTjUxMWNRV2w0aEdDMVVaR1dzbHVxQTFrODVpQVpzd1EySE90VSIsInN1YiI6IjQyOGNiNWQwLTdhYTAtMTFlOC1hZGRlLTQyMDEwYThhMDAwMyIsInBhcnRuZXJfZGF0YSI6eyJhZG1pbiI6ZmFsc2UsIm1lcmNoYW50cyI6W3siaWQiOjU3MjY1LCJyb2xlIjoiUk9MRV9PV05FUiJ9XX0sInR5cGUiOiJwcm94eSIsInByb3ZpZGVyIjoieHNvbGxhIiwieHNvbGxhX2xvZ2luX3Byb2plY3RfaWQiOiI0MGRiMmVhNC01ZDQyLTExZTYtYTNmZi0wMDUwNTZhMGUwNGEifQ.SXeyuqkGKkuGGSbvaEMQaurXDwqfnWHq7skH4IbDRgM",
         "path": "/",
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1537452269.350396
+        "expiry": 1537561974.396939
     },
     {
         "name": "pa-merchant-id",
@@ -116,29 +107,29 @@
     },
     {
         "name": "_mm_vid_1004",
-        "value": "153658826269610807",
+        "value": "1536697968910236932",
         "path": "/",
         "domain": ".publisher.xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1536590075
+        "expiry": 1536699780
     },
     {
         "name": "_ga",
-        "value": "GA1.2.1633295266.1536588264",
+        "value": "GA1.2.1930229766.1536697970",
         "path": "/",
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1599660275
+        "expiry": 1599769981
     },
     {
         "name": "_gid",
-        "value": "GA1.2.2005432688.1536588264",
+        "value": "GA1.2.975080107.1536697970",
         "path": "/",
         "domain": ".xsolla.com",
         "secure": false,
         "httpOnly": false,
-        "expiry": 1536674675
+        "expiry": 1536784381
     }
 ]
