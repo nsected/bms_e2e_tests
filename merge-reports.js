@@ -12,6 +12,5 @@ reportFiles.forEach(reportFile=>{
     reports.push(file)
 });
 let report = merge.all(reports);
-// report.suites.suites = merge.all(report.suites.suites);
 report.suites.suites = [merge.all(report.suites.suites)];
 fs.writeFileSync('all.json', JSON.stringify(report, null, 2));
