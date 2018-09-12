@@ -19,6 +19,7 @@
   "reporterOptions": {
     "reportDir": "report",
     "overwrite": false,
-    "saveJson": true
+    "saveJson": true,
+    "saveHtml": false
   }
 }

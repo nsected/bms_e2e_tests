@@ -6,7 +6,7 @@ context('VC', function () {
         cy.setCurrency('@projectId');
     });
 
-    it('set currency', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-currency/packages`);
         cy.get('[data-id="virtual_currency.packages.empty.create"]').click();
         cy.get('[data-id="sku"]').clear().type('test_package').should('have.value', 'test_package');

@@ -5,7 +5,7 @@ context('virtual items', function () {
         cy.createViItem('@projectId')
     });
 
-    it('edit item', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items`);
         cy.get('[data-id="search"]')
             .click()

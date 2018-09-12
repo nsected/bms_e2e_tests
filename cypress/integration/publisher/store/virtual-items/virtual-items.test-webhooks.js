@@ -5,7 +5,7 @@ context('virtual items', function () {
         cy.createViItem('@projectId').as('itemId');
     });
 
-    it('test vi webhooks', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/edit/webhooks/virtual-items`);
         cy.get('[data-id="user_id"]')
             .clear()

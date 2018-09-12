@@ -6,7 +6,7 @@ context('game keys', function () {
         cy.createGameKeysBasic('@projectId').as('packageId')
     });
 
-    it('Price settings', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/pay2play/${this.packageId}/price-settings`);
 
 

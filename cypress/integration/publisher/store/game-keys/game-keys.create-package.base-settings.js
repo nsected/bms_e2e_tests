@@ -6,7 +6,7 @@ context('game keys', function () {
 
     it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/pay2play`);
-        cy.get('[data-id="create-package"] button1').click();
+        cy.get('[data-id="create-package1"] button').click();
         cy.get('[data-id="sku"]')
             .clear()
             .type('test')

@@ -4,7 +4,7 @@ context('VC', () => {
         cy.newProject().as('projectId');
     });
 
-it('set currency', function() {
+it(Cypress.spec.name, function() {
     cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-currency`);
     cy.get('[data-id="vc_name.en"]')
         .clear()

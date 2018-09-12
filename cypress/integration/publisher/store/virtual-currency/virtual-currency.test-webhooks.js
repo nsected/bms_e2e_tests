@@ -6,7 +6,7 @@ context('VC', function () {
         cy.createVcPackage('@projectId');
     });
 
-    it('test webhooks', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/edit/webhooks`);
         //set webhook
         cy.get('[data-id="payment_url"]')

@@ -5,7 +5,7 @@ context('virtual items', function () {
         // cy.createViFolder('@projectId').as('folderId');
     });
 
-    it('move folder into folder', function () {
+    it(Cypress.spec.name, function () {
 //todo: пофиксить баг с перемещением папки в папку
     });
 });

@@ -9,6 +9,15 @@ reportFiles.forEach(reportFile=>{
     let file = fs.readFileSync(reportFile, 'utf8');
     file = JSON.parse(file);
     file.suites.suites[0].tests[0].timedOut = false;
+    let title = file.suites.suites[0].tests[0].title;
+    let context = [];
+    if (file.suites.suites[0].tests[0].state !== 'passed'){
+        let screenshot = glob.sync(`report/screenshots/${title}/*.png`)[0];
+        context.push(`../${screenshot}`);
+    }
+    context.push(`videos/${title}.mp4`);
+    context = JSON.stringify(context).replace(/"/, '\"');
+    file.suites.suites[0].tests[0].context = context;
     reports.push(file)
 });
 let mergedReport = merge.all(reports);
@@ -50,6 +59,4 @@ reports.forEach(reportObject=>{
 });
 reportTemplate.stats.failures = reportTemplate.stats.testsRegistered - reportTemplate.stats.passes;
 reportTemplate.stats.passPercent = Math.round((reportTemplate.stats.passes / reportTemplate.stats.testsRegistered) * 100);
-
-// report.suites.suites = [merge.all(report.suites.suites)];
-fs.writeFileSync('report/all.json', JSON.stringify(reportTemplate, null, 2));
+fs.writeFileSync('report/report.json', JSON.stringify(reportTemplate, null, 2));

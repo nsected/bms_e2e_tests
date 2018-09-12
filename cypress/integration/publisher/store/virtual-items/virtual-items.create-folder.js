@@ -5,7 +5,7 @@ context('virtual items', function () {
         cy.newProject().as('projectId');
     });
 
-    it('create folder', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items`);
         cy.get('[data-id="vi.options.create"]').click();
         cy.get('[data-id="vi.options.create.group"]').click();

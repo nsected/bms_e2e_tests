@@ -7,7 +7,7 @@ context('subscriptions', function () {
         cy.newProject().as('projectId');
     });
 //create
-    it('create plan',  function () {
+    it(Cypress.spec.name,  function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
         cy.get('[data-id="subscriptions.create-plan"] button').click();
         cy.get('[data-id="name[en]"]')

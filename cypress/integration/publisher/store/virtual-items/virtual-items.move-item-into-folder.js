@@ -6,7 +6,7 @@ context('virtual items', function () {
         cy.createViItem('@projectId').as('itemId');
     });
 
-    it('move item into folder', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items/groups/ungrouped/items/${this.itemId}`);
         cy.get('[data-id="groups"]').click();
         cy.get('.xsui-tree-select__item .xsui-checkbox__label').click();

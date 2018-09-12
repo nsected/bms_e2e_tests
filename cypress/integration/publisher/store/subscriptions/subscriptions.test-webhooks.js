@@ -5,7 +5,7 @@ context('subscriptions', function () {
         cy.createSubscription('@projectId');
     });
 
-    it('test webhooks',  function () {
+    it(Cypress.spec.name,  function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/edit/webhooks/subscriptions`);
         //test webhook
         cy.get('[data-id="user_id"]')

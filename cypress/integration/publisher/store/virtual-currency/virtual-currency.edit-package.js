@@ -6,7 +6,7 @@ context('VC', function () {
         cy.createVcPackage('@projectId');
     });
 
-    it('set currency', function () {
+    it(Cypress.spec.name, function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-currency/packages`);
         cy.get('.table-rows__vc__name__info__name').click();
 

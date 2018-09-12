@@ -6,7 +6,7 @@ context('subscriptions', function () {
         cy.createSubscription('@projectId');
     });
 
-    it('delete plan',  function () {
+    it(Cypress.spec.name,  function () {
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
         cy.get('[data-id="plan.options"]').click();
         cy.get('[data-id="plan.options.delete.enabled"]').click();
