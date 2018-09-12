@@ -2,14 +2,8 @@ const addContext = require('mochawesome/addContext');
 
 context('login', () => {
 it(Cypress.spec.name, () => {
-cy.log(mocha);
-cy.log(mocha.suite.suites[0].tests[0].ctx);
-cy.log(Cypress);
-cy.log(Cypress.mocha);
-cy.log(mocha.Mocha.context);
-    addContext(mocha.suite.suites[0].tests[0].ctx, 'simple string');
     cy.visit('/');
-    cy.get('[name="username"]/')
+    cy.get('[name="username"]')
         .type(Cypress.env('email'))
         .should('have.value', Cypress.env('email'));
     cy.get('[name="password"]')
