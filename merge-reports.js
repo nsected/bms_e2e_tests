@@ -2,6 +2,7 @@ const glob = require("glob");
 const merge = require('deepmerge');
 const fs = require('fs');
 
+
 let reports = [];
 let reportFiles = glob.sync("report/*.json", {});
 console.log(reportFiles);
