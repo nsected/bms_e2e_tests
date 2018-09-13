@@ -10,8 +10,9 @@ context('virtual items', function () {
         cy.get('[data-id="item.options"]').click();
         cy.get('[data-id="item.delete.enabled"]').click();
         cy.get('.xsui-modal').contains('button', 'Confirm').click();//todo: пометить кнопки модалки удаления
-        cy.get('.ui-empty-view').click();
+        cy.get('.ui-empty-view');
+        cy.wait(1000);
         cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/virtual-items/groups/ungrouped`);
-        cy.get('.ui-empty-view').click();
+        cy.get('.ui-empty-view');
     })
 });

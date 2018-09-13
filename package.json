@@ -1,15 +1,15 @@
 {
-  "name": "cypress1",
+  "name": "cypress test publisher",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "sh test.sh",
     "open": "node_modules/.bin/cypress open",
     "install": "npm install",
     "report": "npx allure generate allure-results -o allure-report --clean && npx allure open allure-report"
   },
-  "author": "",
+  "author": "d.mustaev",
   "license": "ISC",
   "dependencies": {
     "allure-commandline": "^2.7.0",

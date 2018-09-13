@@ -21,19 +21,12 @@ if (!process.env.PWD) {
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-    
-
-
-
-    console.log(process.env.PWD);
-    config.env = require(path.join(process.env.PWD, '/tmp/vars.json'));
     config.env.cookies = JSON.stringify(require(path.join(process.env.PWD, '/tmp/cookies.json')));
     console.log(config.env); // see what all is in here!
-  //
+
     // modify config values
 
     // modify env var value
-
 
     // return config
     return config
