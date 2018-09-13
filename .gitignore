@@ -1,8 +1,8 @@
 .idea
 *.iml
-tmp/*
+tmp/
 *.log
 npm-debug.log*
 node_modules/
-mochawesome-report
-report
+mochawesome-report/
+report/
