@@ -1,0 +1,44 @@
+{
+  "id": 1,
+  "external_id": "O2kXUFbN",
+  "group_id": null,
+  "project_id": 36386,
+  "name": {
+    "en": "test plan name2"
+  },
+  "description": {
+    "en": "test Description"
+  },
+  "localized_name": "test plan name2",
+  "charge": {
+    "period": {
+      "value": 12,
+      "type": "month"
+    },
+    "amount": 11,
+    "currency": "USD"
+  },
+  "expiration": {
+    "value": 0,
+    "type": "day"
+  },
+  "trial": {
+    "value": 13,
+    "type": "day"
+  },
+  "grace_period": {
+    "value": 14,
+    "type": "day"
+  },
+  "type": "all",
+  "status": {
+    "value": "active",
+    "counters": {
+      "active": 0,
+      "canceled": 0,
+      "non_renewing": 0,
+      "frozen": 0
+    }
+  },
+  "tags": null
+}

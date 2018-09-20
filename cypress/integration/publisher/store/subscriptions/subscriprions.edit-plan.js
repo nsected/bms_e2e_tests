@@ -2,14 +2,31 @@
 context('subscriptions', function () {
     before(function() {
         cy.login();
-        cy.newProject().as('projectId');
-        cy.createSubscription('@projectId');
+        cy.server({ force404: true });
+        cy.route('GET', '**/merchant/current/projects/*/subscriptions/plans?*', 'fx:subscriptions/plans.original_plan.json');
+        cy.route('GET', '**/merchant/projects/*/subscriptions/plans/*', 'fx:subscriptions/plans.1.json');
+        cy.route('PUT', '**/merchant/projects/*/subscriptions/plans/*', 'fx:subscriptions/plans.edited_plan.json');
+        cy.route('GET', '**/merchant/current/currency/list', 'fx:currency/list');
     });
 
     it(Cypress.spec.name,  function () {
-        cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
+        cy.visit(`/${Cypress.env("merchant")}/projects/${Cypress.env("project")}/storefront`);
+        cy.get('[data-id="subscriptions.configure"]').click();
+        //assert
+        cy.get('.table-rows__subscr__plan__name')
+            .should('have.text', 'test plan name');
+        cy.get('.table-rows__subscr__bc span')
+            .should('have.text', '222 months');
+        cy.get('.table-rows__subscr__camount')
+            .should('have.text', '$111.00');
+
+        //edit
+
+
         cy.get('[data-id="plan.options"]').click();
+
         cy.get('[data-id="subscriptions.table.plan.options.edit"]').click();
+
         cy.get('[data-id="name[en]"]')
             .clear()
             .type('test plan name2')
@@ -37,21 +54,5 @@ context('subscriptions', function () {
             .type('14')
             .should('have.value', '14');
         cy.get('button[type="submit"]').click();
-
-//assert
-        cy.get('.table-rows__subscr__plan__name')
-            .should('have.text', 'test plan name2');
-        cy.get('.table-rows__subscr__bc span')
-            .should('have.text', '12 months');
-        cy.get('.table-rows__subscr__camount')
-            .should('have.text', '$11.00');
-
-        cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
-        cy.get('.table-rows__subscr__plan__name')
-            .should('have.text', 'test plan name2');
-        cy.get('.table-rows__subscr__bc span')
-            .should('have.text', '12 months');
-        cy.get('.table-rows__subscr__camount')
-            .should('have.text', '$11.00');
     })
 });

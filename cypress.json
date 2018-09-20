@@ -5,6 +5,8 @@
   "baseUrl": "https://publisher.xsolla.com/",
   "env": {
     "merchant": "57265",
+    "project": "36399",
+    "apiUrl": "https://api.xsolla.com/",
     "email": "ttestpublisher@gmail.com",
     "password": "TestTestTest111",
     "webhook_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php"
@@ -22,5 +24,6 @@
     "overwrite": false,
     "saveJson": true,
     "saveHtml": false
-  }
+  },
+  "blacklistHosts": ["www.google-analytics.com", "mc.yandex.ru", "hn.inspectlet.com", "consent-api.xsolla.com", "api-iam.intercom.io", "nexus-websocket-a.intercom.io", "status.xsolla.com"]
 }
