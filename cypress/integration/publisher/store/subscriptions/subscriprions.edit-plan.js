@@ -5,11 +5,13 @@ context('subscriptions', function () {
         cy.server({ force404: true });
         cy.route('GET', '**/merchant/current/projects/*/subscriptions/plans?*', 'fx:subscriptions/plans.original_plan.json');
         cy.route('GET', '**/merchant/projects/*/subscriptions/plans/*', 'fx:subscriptions/plans.1.json');
-        cy.route('PUT', '**/merchant/projects/*/subscriptions/plans/*', 'fx:subscriptions/plans.edited_plan.json');
+        cy.route('PUT', '**/merchant/projects/*/subscriptions/plans/*', 'fx:subscriptions/plans.edited_plan.json').as('edited_plan');
         cy.route('GET', '**/merchant/current/currency/list', 'fx:currency/list');
     });
 
     it(Cypress.spec.name,  function () {
+        const { _, $ } = Cypress;
+
         cy.visit(`/${Cypress.env("merchant")}/projects/${Cypress.env("project")}/storefront`);
         cy.get('[data-id="subscriptions.configure"]').click();
         //assert
@@ -54,5 +56,10 @@ context('subscriptions', function () {
             .type('14')
             .should('have.value', '14');
         cy.get('button[type="submit"]').click();
+        cy.wait('@edited_plan')
+            .then(route=>{
+                cy.log(JSON.stringify(route.request.body));
+                cy.log(JSON.stringify(route.response.body));
+            })
     })
 });
