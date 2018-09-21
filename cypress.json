@@ -2,7 +2,7 @@
 
   "projectId": "knc5fc",
   "defaultCommandTimeout": 90000,
-  "baseUrl": "https://publisher.xsolla.com/",
+  "baseUrl": "https://publisher-client.srv.local/",
   "env": {
     "merchant": "57265",
     "project": "36399",

@@ -55,14 +55,18 @@ context('subscriptions', function () {
             .clear()
             .type('14')
             .should('have.value', '14');
+
         cy.get('button[type="submit"]').click();
+
         cy.wait('@edited_plan')
             .then(route=>{
                 let request = route.request.body;
                 let response = route.response.body;
                 request = JSON.stringify(request);
                 response = JSON.stringify(response);
-                _.isEqual(request, response);
+                cy.log(request);
+                cy.log(response);
+                cy.log(_.isEqual(request, response));
             })
     })
 });
