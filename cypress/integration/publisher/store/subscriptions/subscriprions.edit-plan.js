@@ -58,8 +58,11 @@ context('subscriptions', function () {
         cy.get('button[type="submit"]').click();
         cy.wait('@edited_plan')
             .then(route=>{
-                cy.log(JSON.stringify(route.request.body));
-                cy.log(JSON.stringify(route.response.body));
+                let request = route.request.body;
+                let response = route.response.body;
+                request = JSON.stringify(request);
+                response = JSON.stringify(response);
+                _.isEqual(request, response);
             })
     })
 });
