@@ -1,0 +1,23 @@
+{
+  "user_id": {
+    "value": "11111"
+  },
+  "invoice_id": {
+    "value": "11111"
+  },
+  "amount": {
+    "value": "11111"
+  },
+  "currency": {
+    "value": "USD"
+  },
+  "plan_id": {
+    "value": 1
+  },
+  "product_id": {
+    "value": "11111"
+  },
+  "foreign_invoice": {
+    "value": "11111"
+  }
+}

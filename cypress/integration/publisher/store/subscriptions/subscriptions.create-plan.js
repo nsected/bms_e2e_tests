@@ -4,11 +4,15 @@
 context('subscriptions', function () {
     before(function() {
         cy.login();
-        cy.newProject().as('projectId');
+        cy.server({ force404: true });
+        cy.route('GET', '**/merchant/current/projects/*/subscriptions/plans?*', 'fx:subscriptions/plans.empty_plans.json');
+        cy.route('GET', '**/merchant/projects/*/subscriptions/plans/*', 'fx:subscriptions/plans.1.json');
+        cy.route('POST', '**/merchant/projects/*/subscriptions/plans', 'fx:subscriptions/plans.new_plan.json').as('new_plan');
+        cy.route('GET', '**/merchant/current/currency/list', 'fx:currency/list');
     });
 //create
     it(Cypress.spec.name,  function () {
-        cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
+        cy.visit(`/${Cypress.env('merchant')}/projects/${Cypress.env("project")}/storefront/subscriptions`);
         cy.get('[data-id="subscriptions.create-plan"] button').click();
         cy.get('[data-id="name[en]"]')
             .clear()
@@ -39,14 +43,15 @@ context('subscriptions', function () {
         cy.get('button[type="submit"]').click();
 
 //assert
-        cy.get('.table-rows__subscr__plan__name')
-            .should('have.text', 'test plan name');
-        cy.get('.table-rows__subscr__bc span')
-            .should('have.text', '12 months');
-        cy.get('.table-rows__subscr__camount')
-            .should('have.text', '$11.00');
+        cy.wait('@new_plan')
+            .then(route=>{
+                let request = route.request.body;
+                let response = route.response.body;
+                cy.log(JSON.stringify(request));
+                cy.log(JSON.stringify(response));
+                // expect(request).to.deep.equal(response);
+            });
 
-        cy.visit(`/${Cypress.env('merchant')}/projects/${this.projectId}/storefront/subscriptions`);
         cy.get('.table-rows__subscr__plan__name')
             .should('have.text', 'test plan name');
         cy.get('.table-rows__subscr__bc span')

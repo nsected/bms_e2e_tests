@@ -62,11 +62,14 @@ context('subscriptions', function () {
             .then(route=>{
                 let request = route.request.body;
                 let response = route.response.body;
-                request = JSON.stringify(request);
-                response = JSON.stringify(response);
-                cy.log(request);
-                cy.log(response);
-                cy.log(_.isEqual(request, response));
-            })
+                expect(request).to.deep.equal(response);
+            });
+
+        cy.get('.table-rows__subscr__plan__name')
+            .should('have.text', 'test plan name2');
+        cy.get('.table-rows__subscr__bc span')
+            .should('have.text', '12 months');
+        cy.get('.table-rows__subscr__camount')
+            .should('have.text', '$11.00');
     })
 });

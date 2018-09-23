@@ -1,33 +1,33 @@
 {
   "id": 1,
-  "external_id": "O2kXUFbN",
+  "external_id": "12345678",
   "group_id": null,
-  "project_id": 36386,
+  "project_id": 36399,
   "name": {
     "en": "test plan name2"
   },
   "description": {
     "en": "test Description"
   },
-  "localized_name": "test plan name2",
+  "localized_name": "test Plan name",
   "charge": {
     "period": {
-      "value": 12,
+      "value": "12",
       "type": "month"
     },
-    "amount": 11,
+    "amount": "11",
     "currency": "USD"
   },
   "expiration": {
-    "value": 0,
+    "value": "0",
     "type": "day"
   },
   "trial": {
-    "value": 13,
+    "value": "13",
     "type": "day"
   },
   "grace_period": {
-    "value": 14,
+    "value": "14",
     "type": "day"
   },
   "type": "all",

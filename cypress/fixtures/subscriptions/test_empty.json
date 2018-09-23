@@ -1,0 +1,30 @@
+{
+  "user_id": {
+    "value": null,
+    "required": true
+  },
+  "invoice_id": {
+    "value": null,
+    "required": true
+  },
+  "amount": {
+    "value": null,
+    "required": true
+  },
+  "currency": {
+    "value": null,
+    "required": true
+  },
+  "plan_id": {
+    "value": null,
+    "required": true
+  },
+  "product_id": {
+    "value": null,
+    "required": false
+  },
+  "foreign_invoice": {
+    "value": null,
+    "required": false
+  }
+}

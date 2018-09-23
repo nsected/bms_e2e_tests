@@ -1,8 +1,8 @@
 {
   "id": 1,
-  "external_id": "wVsJVYmo",
+  "external_id": "12345678",
   "group_id": null,
-  "project_id": 36340,
+  "project_id": 36399,
   "name": {
     "en": "test Plan name"
   },
@@ -12,22 +12,22 @@
   "localized_name": "test Plan name",
   "charge": {
     "period": {
-      "value": 222,
+      "value": "222",
       "type": "month"
     },
-    "amount": 111,
+    "amount": "111",
     "currency": "USD"
   },
   "expiration": {
-    "value": 0,
+    "value": "0",
     "type": "day"
   },
   "trial": {
-    "value": 333,
+    "value": "333",
     "type": "day"
   },
   "grace_period": {
-    "value": 360,
+    "value": "360",
     "type": "day"
   },
   "type": "all",

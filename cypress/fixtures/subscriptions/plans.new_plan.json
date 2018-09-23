@@ -1,0 +1,38 @@
+{
+  "charge": {
+    "amount": "11",
+    "currency": "USD",
+    "period": {
+      "value": "12",
+      "type": "month"
+    }
+  },
+  "name": {
+    "en": "test plan name"
+  },
+  "description": {
+    "en": "test Description"
+  },
+  "trial": {
+    "value": "13",
+    "type": "day"
+  },
+  "grace_period": {
+    "value": "14",
+    "type": "day"
+  },
+  "external_id": "",
+  "expiration": {
+    "value": null,
+    "type": "day"
+  },
+  "status": {
+    "value": "active",
+    "counters": {
+      "active": 0,
+      "canceled": 0,
+      "frozen": 0,
+      "non_renewing": 0
+    }
+  }
+}

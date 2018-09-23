@@ -1,0 +1,394 @@
+{
+  "results": [
+    {
+      "id": "testing_universal_user_invalid",
+      "title": "\u0412\u0435\u0440\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f: \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u043d\u044b\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c",
+      "description": "\u041a\u043e\u0433\u0434\u0430 \u0418\u043a\u0441\u043e\u043b\u043b\u0430 \u043f\u043e\u0441\u044b\u043b\u0430\u0435\u0442 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441 \u043d\u0435\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c, \u043f\u0440\u043e\u0435\u043a\u0442 \u0434\u043e\u043b\u0436\u0435\u043d \u043e\u0442\u0432\u0435\u0442\u0438\u0442\u044c \u043a\u043e\u0434\u043e\u043c 4\u0445\u0445 INVALID_USER. \u042d\u0442\u043e \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441 \u043f\u0440\u043e\u0438\u0437\u0432\u043e\u043b\u044c\u043d\u044b\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c.",
+      "attempts_count": 1,
+      "attempts_details": [
+        {
+          "success": true,
+          "http_data": {
+            "request": {
+              "url": "https:\/\/secure.xsolla.com\/api\/calc\/billing\/sample.universal.php",
+              "headers": [
+                "Accept: application\/json",
+                "Content-Type: application\/json",
+                "Content-Length: 78",
+                "Authorization: Signature 7e0808e2db598ae5edb86a17f05f70ac68246006"
+              ],
+              "body": {
+                "notification_type": "user_validation",
+                "user": {
+                  "id": "test_xsolla_1537709493"
+                }
+              }
+            },
+            "response": {
+              "headers": [
+                "HTTP\/1.1 400",
+                "Server: nginx",
+                "Date: Sun, 23 Sep 2018 13:31:33 GMT",
+                "Content-Type: application\/json",
+                "Transfer-Encoding: chunked",
+                "Connection: keep-alive",
+                "X-NewRelic-App-Data: PxQGUFZRDQETVVhTAQAOREgTYVYAMhEDXhFZAUxRW1xvSmwTWD0cAxRfa05MQRQDHlRRUgcBG1ZKAQYAUFBPTwFOGlsIAQNQC1cNVQEDAwZVAQFDSgVZX0MBPA=="
+              ],
+              "body": "{\"error\":{\"code\":\"INVALID_USER\",\"message\":\"Invalid user \\\"test_xsolla_1537709493\\\"\"}}"
+            }
+          },
+          "result_message": null
+        }
+      ]
+    },
+    {
+      "id": "testing_universal_user_correct",
+      "title": "\u0412\u0435\u0440\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f: \u0442\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u0442\u0432\u0435\u0442\u0430 \u0432 \u0441\u043b\u0443\u0447\u0430\u0435 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e\u0439 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f",
+      "description": "\u041a\u043e\u0433\u0434\u0430 \u0418\u043a\u0441\u043e\u043b\u043b\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f, \u043f\u0440\u043e\u0435\u043a\u0442 \u0434\u043e\u043b\u0436\u0435\u043d \u043e\u0442\u0432\u0435\u0442\u0438\u0442\u044c 200",
+      "attempts_count": 1,
+      "attempts_details": [
+        {
+          "success": true,
+          "http_data": {
+            "request": {
+              "url": "https:\/\/secure.xsolla.com\/api\/calc\/billing\/sample.universal.php",
+              "headers": [
+                "Accept: application\/json",
+                "Content-Type: application\/json",
+                "Content-Length: 57",
+                "Authorization: Signature 571410b5a0e42b4103423e7f433e95f860cd8fed"
+              ],
+              "body": {
+                "notification_type": "user_validation",
+                "user": {
+                  "id": "1"
+                }
+              }
+            },
+            "response": {
+              "headers": [
+                "HTTP\/1.1 204 No Content",
+                "Server: nginx",
+                "Date: Sun, 23 Sep 2018 13:31:33 GMT",
+                "Content-Type: text\/html; charset=UTF-8",
+                "Connection: keep-alive",
+                "X-NewRelic-App-Data: PxQGUFZRDQETVVhTAQAOREgTYVYAMhEDXhFZAUxRW1xvSmwTWD0cAxRfa05MQRQDHlRRUgcBG1ZKAQYAUVdPTwFOGlANXQdWAVEIAlRVA1YGBQZDSgVZX0MBPA==",
+                "Timing-Allow-Origin: *",
+                "Pragma: no-cache",
+                "Cache-Control: no-cache, no-store, must-revalidate, max-age=0",
+                "Set-Cookie: split_mode=0;Max-age=600;path=\/"
+              ],
+              "body": ""
+            }
+          },
+          "result_message": null
+        }
+      ]
+    },
+    {
+      "id": "testing_universal_payment_correct",
+      "title": "\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u043f\u043b\u0430\u0442\u0435\u0436\u0430: \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441  \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u043c \u043f\u043b\u0430\u0442\u0435\u0436\u043e\u043c",
+      "description": "\u041a\u043e\u0433\u0434\u0430 \u0418\u043a\u0441\u043e\u043b\u043b\u0430 \u0437\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u0442 \u043f\u043b\u0430\u0442\u0435\u0436 \u0441 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u043c\u0438 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u043c\u0438, \u043f\u0440\u043e\u0435\u043a\u0442 \u0434\u043e\u043b\u0436\u0435\u043d \u0432\u0435\u0440\u043d\u0443\u0442\u044c \u043a\u043e\u0434 200. \u042d\u0442\u043e \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u043f\u043b\u0430\u0442\u0435\u0436\u043d\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441 \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u043c.",
+      "attempts_count": 2,
+      "attempts_details": [
+        {
+          "success": true,
+          "http_data": {
+            "request": {
+              "url": "https:\/\/secure.xsolla.com\/api\/calc\/billing\/sample.universal.php",
+              "headers": [
+                "Accept: application\/json",
+                "Content-Type: application\/json",
+                "Content-Length: 824",
+                "Authorization: Signature 9015d15e4fb862f0b721395f8f9f66ec52d3fd02"
+              ],
+              "body": {
+                "notification_type": "payment",
+                "purchase": {
+                  "checkout": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "subscription": {
+                    "subscription_id": 777,
+                    "plan_id": "234066",
+                    "product_id": 1,
+                    "date_create": "2018-09-23T16:31:33+03:00",
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "total": {
+                    "currency": "USD",
+                    "amount": 1
+                  }
+                },
+                "user": {
+                  "id": "1"
+                },
+                "transaction": {
+                  "id": 1,
+                  "external_id": "1",
+                  "payment_date": "2018-09-23T16:31:33+03:00",
+                  "payment_method": 26,
+                  "dry_run": 1,
+                  "agreement": 71700
+                },
+                "payment_details": {
+                  "payment": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "payment_method_sum": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "xsolla_balance_sum": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "payout": {
+                    "currency": "USD",
+                    "amount": 0.89
+                  },
+                  "xsolla_fee": {
+                    "currency": "USD",
+                    "amount": 0.05
+                  },
+                  "payment_method_fee": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "vat": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "sales_tax": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "payout_currency_rate": "1"
+                }
+              }
+            },
+            "response": {
+              "headers": [
+                "HTTP\/1.1 204 No Content",
+                "Server: nginx",
+                "Date: Sun, 23 Sep 2018 13:31:33 GMT",
+                "Content-Type: text\/html; charset=UTF-8",
+                "Connection: keep-alive",
+                "X-NewRelic-App-Data: PxQGUFZRDQETVVhTAQAOREgTYVYAMhEDXhFZAUxRW1xvSmwTWD0cAxRfa05MQRQDHlRRUgcBG1ZKAQYAUV9PTwFOGlILAQQGCgRdUgdXAlBcUwVDSgVZX0MBPA==",
+                "Timing-Allow-Origin: *",
+                "Pragma: no-cache",
+                "Cache-Control: no-cache, no-store, must-revalidate, max-age=0",
+                "Set-Cookie: split_mode=0;Max-age=600;path=\/"
+              ],
+              "body": ""
+            }
+          },
+          "result_message": null
+        },
+        {
+          "success": true,
+          "http_data": {
+            "request": {
+              "url": "https:\/\/secure.xsolla.com\/api\/calc\/billing\/sample.universal.php",
+              "headers": [
+                "Accept: application\/json",
+                "Content-Type: application\/json",
+                "Content-Length: 824",
+                "Authorization: Signature 9015d15e4fb862f0b721395f8f9f66ec52d3fd02"
+              ],
+              "body": {
+                "notification_type": "payment",
+                "purchase": {
+                  "checkout": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "subscription": {
+                    "subscription_id": 777,
+                    "plan_id": "234066",
+                    "product_id": 1,
+                    "date_create": "2018-09-23T16:31:33+03:00",
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "total": {
+                    "currency": "USD",
+                    "amount": 1
+                  }
+                },
+                "user": {
+                  "id": "1"
+                },
+                "transaction": {
+                  "id": 1,
+                  "external_id": "1",
+                  "payment_date": "2018-09-23T16:31:33+03:00",
+                  "payment_method": 26,
+                  "dry_run": 1,
+                  "agreement": 71700
+                },
+                "payment_details": {
+                  "payment": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "payment_method_sum": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "xsolla_balance_sum": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "payout": {
+                    "currency": "USD",
+                    "amount": 0.89
+                  },
+                  "xsolla_fee": {
+                    "currency": "USD",
+                    "amount": 0.05
+                  },
+                  "payment_method_fee": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "vat": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "sales_tax": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "payout_currency_rate": "1"
+                }
+              }
+            },
+            "response": {
+              "headers": [
+                "HTTP\/1.1 204 No Content",
+                "Server: nginx",
+                "Date: Sun, 23 Sep 2018 13:31:33 GMT",
+                "Content-Type: text\/html; charset=UTF-8",
+                "Connection: keep-alive",
+                "X-NewRelic-App-Data: PxQGUFZRDQETVVhTAQAOREgTYVYAMhEDXhFZAUxRW1xvSmwTWD0cAxRfa05MQRQDHlRRUgcBG1ZKAQYHWlFPTwFOGlIOWg0CUF0JWAMABVNRB1VDSgVZX0MBPA==",
+                "Timing-Allow-Origin: *",
+                "Pragma: no-cache",
+                "Cache-Control: no-cache, no-store, must-revalidate, max-age=0",
+                "Set-Cookie: split_mode=1;Max-age=600;path=\/"
+              ],
+              "body": ""
+            }
+          },
+          "result_message": null
+        }
+      ]
+    },
+    {
+      "id": "testing_universal_payment_invalid_signature",
+      "title": "\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u043f\u043b\u0430\u0442\u0435\u0436\u0430: \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u043d\u043e\u0439 \u043f\u043e\u0434\u043f\u0438\u0441\u044c\u044e",
+      "description": "\u041a\u043e\u0433\u0434\u0430 \u0418\u043a\u0441\u043e\u043b\u043b\u0430 \u043f\u043e\u0441\u044b\u043b\u0430\u0435\u0442 \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u043f\u043b\u0430\u0442\u0435\u0436\u0430 \u0441 \u043d\u0435\u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u044b\u043c ID, \u043f\u0440\u043e\u0435\u043a\u0442 \u0434\u043e\u043b\u0436\u0435\u043d \u0432\u0435\u0440\u043d\u0443\u0442\u044c \u043e\u0442\u0432\u0435\u0442\u0438\u0442\u044c \u043a\u043e\u0434\u043e\u043c 4\u0445\u0445 INVALID_SIGNATURE. \u042d\u0442\u043e \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0441 \u043d\u0435\u0432\u0430\u043b\u0438\u0434\u043d\u043e\u0439 \u043f\u043e\u0434\u043f\u0438\u0441\u044c\u044e.",
+      "attempts_count": 1,
+      "attempts_details": [
+        {
+          "success": true,
+          "http_data": {
+            "request": {
+              "url": "https:\/\/secure.xsolla.com\/api\/calc\/billing\/sample.universal.php",
+              "headers": [
+                "Accept: application\/json",
+                "Content-Type: application\/json",
+                "Content-Length: 824",
+                "Authorization: Signature b76a954b4b025538c201a9be12b09d08bdbcd378"
+              ],
+              "body": {
+                "notification_type": "payment",
+                "purchase": {
+                  "checkout": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "subscription": {
+                    "subscription_id": 777,
+                    "plan_id": "234066",
+                    "product_id": 1,
+                    "date_create": "2018-09-23T16:31:33+03:00",
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "total": {
+                    "currency": "USD",
+                    "amount": 1
+                  }
+                },
+                "user": {
+                  "id": "1"
+                },
+                "transaction": {
+                  "id": 1,
+                  "external_id": "1",
+                  "payment_date": "2018-09-23T16:31:33+03:00",
+                  "payment_method": 26,
+                  "dry_run": 1,
+                  "agreement": 71700
+                },
+                "payment_details": {
+                  "payment": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "payment_method_sum": {
+                    "currency": "USD",
+                    "amount": 1
+                  },
+                  "xsolla_balance_sum": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "payout": {
+                    "currency": "USD",
+                    "amount": 0.89
+                  },
+                  "xsolla_fee": {
+                    "currency": "USD",
+                    "amount": 0.05
+                  },
+                  "payment_method_fee": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "vat": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "sales_tax": {
+                    "currency": "USD",
+                    "amount": 0
+                  },
+                  "payout_currency_rate": "1"
+                }
+              }
+            },
+            "response": {
+              "headers": [
+                "HTTP\/1.1 400",
+                "Server: nginx",
+                "Date: Sun, 23 Sep 2018 13:31:33 GMT",
+                "Content-Type: application\/json",
+                "Transfer-Encoding: chunked",
+                "Connection: keep-alive",
+                "X-NewRelic-App-Data: PxQGUFZRDQETVVhTAQAOREgTYVYAMhEDXhFZAUxRW1xvSmwTWD0cAxRfa05MQRQDHlRRUgcBG1ZKAQYAWl9PTwFOGlsPDg0FV1cIUwRRV1VQAwJDSgVZX0MBPA=="
+              ],
+              "body": "{\"error\":{\"code\":\"INVALID_SIGNATURE\",\"message\":\"Signature is invalid\"}}"
+            }
+          },
+          "result_message": null
+        }
+      ]
+    }
+  ],
+  "sandbox_url": "https:\/\/sandbox-secure.xsolla.com\/paystation2\/?access_token=nupn1PNpYy5yvPG9yMCxBlb55Pimfnt8"
+}
