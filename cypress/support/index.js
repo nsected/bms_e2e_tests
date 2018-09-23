@@ -1,3 +1,6 @@
+//этот файл исполняется до начала тестов.
+//С помощью него можно определить собственные команды, либо сервисные функции.
+//https://on.cypress.io/configuration
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.

@@ -19,6 +19,7 @@ if (!process.env.PWD) {
 }
 
 module.exports = (on, config) => {
+    //мы можем определять собственные хуки, с привязкой к событиям cypress
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
     config.env.cookies = JSON.stringify(require(path.join(process.env.PWD, '/tmp/cookies.json')));

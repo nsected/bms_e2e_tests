@@ -1,14 +1,14 @@
 {
-
   "projectId": "knc5fc",
   "defaultCommandTimeout": 90000,
-  "baseUrl": "https://publisher-client.srv.local/",
+  "baseUrl": "https://publisher.xsolla.com/",
+  "help": "в этом файле мы можем определить как конфигурацию cypress, так и переменные для тестов https://docs.cypress.io/api/plugins/configuration-api.html",
   "env": {
-    "merchant": "57265",
-    "project": "36399",
-    "apiUrl": "https://api.xsolla.com/",
-    "email": "ttestpublisher@gmail.com",
-    "password": "TestTestTest111",
+    "merchant": "66268",
+    "project": "36511",
+    "apiUrl": "publisher.xsolla.com",
+    "email": "boco@dim-coin.com",
+    "password": "ABab12345678",
     "webhook_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php"
   },
   "viewportHeight": 1000,

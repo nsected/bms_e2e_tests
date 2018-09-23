@@ -8,7 +8,7 @@ const cypress = require('cypress')
 */
 
 
-const MAX_NUM_RUNS = 3
+const MAX_NUM_RUNS = 1
 const DEFAULT_SPECS = undefined //'cypress/integration/index1.spec.js'
 
 let totalFailuresIncludingRetries = 0
@@ -20,8 +20,8 @@ const run = (num, spec) => {
 
     return cypress.run({
         // pass your options here...
-        spec: spec || DEFAULT_SPECS,
-        browser: 'chrome',
+        spec: 'cypress/integration/service/error.js',
+        browser: "electron",
         env: {
             numRuns: num
         }

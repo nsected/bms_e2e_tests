@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
-rm -rf report
-mkdir -p tmp
-
-#echo "{}" > tmp/cookies.json && npx cypress run  --spec 'cypress/integration/service/login.js' --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa
-npx cypress run  --spec 'cypress/integration/publisher/store/game-keys/**/*'  --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa
-npx cypress run  --spec 'cypress/integration/publisher/store/subscriptions/**/*'  --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa
-npx cypress run  --spec 'cypress/integration/publisher/store/virtual-currency/**/*'  --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa
-npx cypress run  --spec 'cypress/integration/publisher/store/virtual-items/**/*'  --record --key 1cda45fb-63b2-4a42-ae9c-6cf3eb6a58aa
+rm -rf report #очищаем папку с отчетом
+rm -rf tmp #очищаем временную папку
+mkdir -p tmp # временная папка
+echo "{}" > tmp/cookies.json #создаем пустой файл cookies
+npx cypress run  --spec 'cypress/integration/service/login.js'
+npx cypress run  --spec 'cypress/integration/publisher/store/subscriptions/**/*' &
+npx cypress run  --spec 'cypress/integration/service/error.js' &
+wait
 sleep 2
-rm report/*.html && node merge-reports.js && npx marge report/report.json -o report
+rm report/*.html # очищаем ненужные html отчеты
+node merge-reports.js # мержим json отчеты в один файл. На данный момент используется самописный скрипт для мержа отчетов.
+npx marge report/report.json -o report # генерируем html файл для визуального просмотра отчета
+#мы можем использовать систему отчетов cypress dashboard
+#cypress использует сложную систему синхронизации на основе проприетарного сервиса dashboard для паралельного исполнения тестов,
+# но нам доступно простейшее выполнение процесса cypress параллельно, с разным набором тест-кейсов.
+# на данный момент cypress позволет использовать проприетарную систему отчетов бесплатно
