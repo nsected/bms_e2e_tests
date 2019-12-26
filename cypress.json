@@ -1,14 +1,14 @@
 {
-  "projectId": "knc5fc",
-  "defaultCommandTimeout": 90000,
-  "baseUrl": "https://publisher.xsolla.com/",
+  "defaultCommandTimeout": 9000,
+  "baseUrl": "https://crm.mysmartflat.ru/",
+  "integrationFolder": "cypress/integration",
   "help": "в этом файле мы можем определить как конфигурацию cypress, так и переменные для тестов https://docs.cypress.io/api/plugins/configuration-api.html",
   "env": {
     "merchant": "66268",
     "project": "36511",
     "apiUrl": "publisher.xsolla.com",
-    "email": "boco@dim-coin.com",
-    "password": "ABab12345678",
+    "email": "nick@ghost.com",
+    "password": "superkolya",
     "webhook_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php"
   },
   "viewportHeight": 1000,

@@ -111,28 +111,28 @@ Cypress.Commands.add("newProject", () => { //пример команды, вып
 });
 
 
-Cypress.Commands.add("login", function () { //пример логина приложения, при помощи сохраненных cookies.
-    // Эту команду можно использовать для любого продукта без изменений
-    cy.visit('/');
-    cy.exec('echo "test"'); // выполнение команды на сервере
-    //cypress не использует selenium, но базовая архитектура по прежнему разделена на сервер
-    //и клиент
-    cy.readFile("tmp/cookies.json")
-        .then((cookies) => {
-            cookies.forEach(function (cookie) {
-                setCookie(cookie.name, cookie.value, {
-                    domain: cookie.domain,
-                    path: cookie.path,
-                    secure: cookie.secure,
-                    expiry: cookie.expiry
-                })
-            });
-
-            function setCookie(name, value) {
-                cy.setCookie(name, value)
-            }
-        });
-});
+// Cypress.Commands.add("login", function () { //пример логина приложения, при помощи сохраненных cookies.
+//     // Эту команду можно использовать для любого продукта без изменений
+//     cy.visit('/');
+//     cy.exec('echo "test"'); // выполнение команды на сервере
+//     //cypress не использует selenium, но базовая архитектура по прежнему разделена на сервер
+//     //и клиент
+//     cy.readFile("tmp/cookies.json")
+//         .then((cookies) => {
+//             cookies.forEach(function (cookie) {
+//                 setCookie(cookie.name, cookie.value, {
+//                     domain: cookie.domain,
+//                     path: cookie.path,
+//                     secure: cookie.secure,
+//                     expiry: cookie.expiry
+//                 })
+//             });
+//
+//             function setCookie(name, value) {
+//                 cy.setCookie(name, value)
+//             }
+//         });
+// });
 
 
 
