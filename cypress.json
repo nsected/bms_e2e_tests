@@ -2,16 +2,11 @@
   "defaultCommandTimeout": 9000,
   "baseUrl": "https://crm.mysmartflat.ru/",
   "integrationFolder": "cypress/integration",
-  "waitForAnimations":	"true",
+  "waitForAnimations":	true,
   "animationDistanceThreshold": 5,
-  "help": "в этом файле мы можем определить как конфигурацию cypress, так и переменные для тестов https://docs.cypress.io/api/plugins/configuration-api.html",
   "env": {
-    "merchant": "66268",
-    "project": "36511",
-    "apiUrl": "publisher.xsolla.com",
     "email": "nick@ghost.com",
-    "password": "superkolya",
-    "webhook_url": "https://secure.xsolla.com/api/calc/billing/sample.universal.php"
+    "password": "superkolya"
   },
   "viewportHeight": 1000,
   "viewportWidth": 1220,
@@ -27,5 +22,5 @@
     "saveJson": true,
     "saveHtml": false
   },
-  "blacklistHosts": ["www.google-analytics.com", "mc.yandex.ru", "hn.inspectlet.com", "consent-api.xsolla.com", "api-iam.intercom.io", "nexus-websocket-a.intercom.io", "status.xsolla.com"]
+  "blacklistHosts": []
 }

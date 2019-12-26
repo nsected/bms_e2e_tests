@@ -8,9 +8,7 @@ it(Cypress.spec.name, () => {
         .type(Cypress.env('password'))
         .should('have.value', Cypress.env('password'));
     cy.get('[type="button"]').click();
-    cy.xpath('//*[@href="/profile" and text()="Петр Петрович"]');
-    cy.xpath('//*[text()="testovaya zayavka"]')
-        // .should('have.value', "Петр Петрович");
+    cy.contains('[href="/profile"]', "Петр Петрович");
 })
 });
  
