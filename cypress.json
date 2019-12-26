@@ -1,5 +1,5 @@
 {
-  "defaultCommandTimeout": 9000,
+  "defaultCommandTimeout": 90000,
   "baseUrl": "https://crm.mysmartflat.ru/",
   "integrationFolder": "cypress/integration",
   "waitForAnimations":	true,
